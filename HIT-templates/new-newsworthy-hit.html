@@ -1,0 +1,165 @@
+<style type="text/css">
+<!--
+.odd {background: #E9CFEC;}
+//--></style>
+
+<table>
+  <tbody>
+    <tr>
+      <td style="width:800px">
+        <h1>Rate the newsworthiness of Wikipedia articles</h1>
+          <p>
+            For the Wikipedia articles below, judge the newsworthiness of each article. Things that count as current or newsworthy:</p><p>
+          <ul>
+            <li><b>Major world events</b> like the capture of Osama bin Laden, the Royal Wedding in the UK, or the uprisings in various Arab countries</li>
+            <li><b>Disasters</b> like the BP oil spill in the Gulf of Mexico or the Japanese earthquake and subsequent tsunami and nuclear disaster</li>
+            <li><b>Popular culture</b> like blockbuster films, hit TV shows, and current music and related events like the Academy Awards or the Emmys</li>
+            <li><b>Sports events</b> like the Superbowl, World Series, the Kentucky Derby or the World Cup</li>
+            <li><b>People in the news</b> like the Navy Seals after they assassinated bin Laden or celebrities/politicians embroiled in scandals</li>
+            <li><b>Captivating topics</b> like Obama's birth certificate or Harold Camping's prediction of the Rapture</li>
+          </ul>
+          <p>
+             For example, if you were doing this HIT in the week following the killing of Osama bin Laden you would rate the following articles as newsworthy:</p>
+          <ul>
+            <li> Osama bin Laden </li>
+            <li> Location of Osama bin Laden </li>
+            <li> FBI Ten Most Wanted Fugitives </li>
+            <li> Al-Qaeda </li>
+            <li> United States Navy SEALs </li>
+            <li> List of Navy SEALs </li>
+            <li> Abbottabad </li>
+            <li> September 11 attacks </li>
+            <li> Waterboarding </li>
+            <li> Ayman al-Zawahir </li>
+            <li> Reactions to the death of Osama bin Laden </li>
+          </ul> 
+          <p>
+        </td>
+        <td valign="top" bgcolor="#d3d3d3" height="550px" width="500px" style="float: right;"><font size="-2"><center><u><b>Informed Consent Form</b></u></center>
+          <p><b>Purpose of research study:</b> We are collecting judgments about the quality of automatically generated text as part of our research into human language technologies.</p>
+          <p><b>Benefits:</b> Although it will not directly benefit you, this study may benefit society by improving how computers process human languages. This could lead to better translation software, improved web searching, or new user interfaces for computers and mobile devices.</p>
+          <p><b>Risks:</b>There are no risks for participating in this study.</p>
+          <p><b>Voluntary participation:</b>You may stop participating at any time without penalty by clicking on the
+&ldquo;Return HIT&rdquo; button, or closing your browser window.</p>
+          <p><b>We may end your participation if</b> you do not have adequate knowledge of the language, or you are
+not following the instructions, or your answers significantly deviate from known translations.</p>
+          <p><b>Confidentiality: </b>The only identifying information kept about you will be a WorkerID serial numberand your IP address. This information may be disclosed to other researchers.</p>
+          <p><b>Questions/concerns: </b>You may e-mail questions to the principle investigator, <a href="http://cs.jhu.edu/%7Eccb/">Chris Callison-Burch</a>. If you feel you have been treated unfairly you may contact the Johns Hopkins University <a href="http://web.jhu.edu/Homewood-IRB/contact.html">Institutional Review Board</a>.</p>
+          <p><b>Clicking on the &ldquo;Accept HIT&rdquo; button</b> indicates that you understand the information in
+this consent form. You have not waived any legal rights you otherwise would have as a participant in a research
+study.</p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br>
+
+<script type="text/javascript">
+
+   function unhide(ID) {
+     var items = document.getElementsByTagName("a");
+     for (var i = 0; i < items.length; i++) {
+       if (items[i].id == ID) {
+       items[i].style.display=(items[i].style.display=='none')?'block':'none';
+       }
+     }
+   }
+
+   function unescapeHTML(html) {
+      var htmlNode = document.createElement("DIV");
+      htmlNode.innerHTML = html;
+      if(htmlNode.innerText !== undefined)
+         return htmlNode.innerText; // IE
+      return htmlNode.textContent; // FF
+   }
+
+   var articles = [ 
+	"${article_0}",
+	"${article_1}",
+	"${article_2}",
+	"${article_3}",
+	"${article_4}",
+	"${article_5}",
+	"${article_6}",
+	"${article_7}",
+	"${article_8}",
+	"${article_9}",
+   ];
+
+   var lead_sentences = [ 
+	"${lead_sentence_0}",
+	"${lead_sentence_1}",
+	"${lead_sentence_2}",
+	"${lead_sentence_3}",
+	"${lead_sentence_4}",
+	"${lead_sentence_5}",
+	"${lead_sentence_6}",
+	"${lead_sentence_7}",
+	"${lead_sentence_8}",
+	"${lead_sentence_9}",
+   ];
+
+   var lead_paragraphs = [ 
+	"${lead_paragraph_0}",
+	"${lead_paragraph_1}",
+	"${lead_paragraph_2}",
+	"${lead_paragraph_3}",
+	"${lead_paragraph_4}",
+	"${lead_paragraph_5}",
+	"${lead_paragraph_6}",
+	"${lead_paragraph_7}",
+	"${lead_paragraph_8}",
+	"${lead_paragraph_9}",
+   ];
+
+   <!-- wrapper table for formatting purposes -->
+   document.write('<table>');
+   document.write('<tbody>');
+   document.write('<tr valign="top">');
+   document.write('<td>');
+   document.write('<table border="0" style="text-align:left; width: 800px;">');
+   document.write('<tbody>');
+   document.write('<tr>');
+   document.write('<th>Is this article newsworthy?</th>');
+   document.write('<th>Title</th>');
+   document.write('<th>First sentence</th>');
+   document.write('</tr>');
+   <!-- begin task generation -->
+   for (var i = 0; i < 10; i++) {
+     document.write('<tr valign="top">');
+     document.write('<td>');
+     document.write('<select name="newsworthy">');
+     document.write('<option value=""></option>');
+     document.write('<option value="Yes">Yes</option>');
+     document.write('<option value="It was but not anymore">Formerly</option>');
+     document.write('<option value="No, never">No, never</option>');
+     document.write('<option value="Don\'t know">Don\'t know</option>');
+     document.write('</select>');
+     document.write('</td>');
+     document.write('<td>');
+     document.write(unescapeHTML(articles[i]));
+     document.write('</td>');
+     document.write('<td>');
+     document.write('<a id="more' + i + '" style="display:block;">');
+     document.write(unescapeHTML(lead_sentences[i]));
+     document.write('</a>');
+     document.write('<a id="more' + i + '" style="display:none;">');
+     document.write(unescapeHTML(lead_paragraphs[i]));
+     document.write('</a>');
+     document.write('<a id="more' + i + '" style="display:block" href="javascript:unhide(\'more' + i + '\');">');
+     document.write('more ...');
+     document.write('</a>');
+     document.write('<a id="more' + i + '" style="display:none" href="javascript:unhide(\'more' + i + '\');">');
+     document.write('less ...');
+     document.write('</a>');
+     document.write('</a>');
+     document.write('</td>');
+     document.write('</tr>');
+   }
+   document.write('</tbody>');
+   document.write('</table>');
+   document.write('<p>Please provide any comments you may have below, we appreciate your input!</p>');
+   document.write('<p><textarea name="comment" cols="80" rows="4"> </textarea>&nbsp;</p>');
+
+        
+</script>
