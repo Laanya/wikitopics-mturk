@@ -1,0 +1,257 @@
+<h3>Say whether pairs of Wikipedia articles were popular for the same reason</h3>
+<p>Below is a list of Wikipedia articles that were popular on ${month} ${day}, ${year}.  Your job is to read the first paragraph of each pair of articles and say whether they were popular for the same reason.  Examples:</p>
+<ul>
+    <li>The article about <b>Chesley Sullenberger</b> was popular for the same reason that the article about <b>Hudson River</b> was popular, because he was the captain who landed his damaged air plane in the Hudson River without loss of life.  So for this pair, you would answer <b>yes</b>.</li>
+    <li>The article about <b>Chesley Sullenberger</b> was not popular for the same reason that the article about the <b>2009 presidential inauguration</b> was popular, since they describe unrelated events.   So for this pair, you would answer <b>no</b>.</li>
+</ul>
+<p>Please read through the following ${numpairs} pairs, and answer the question for each pair. &nbsp;If you need more information than just the first paragraph of the article, you can click on MORE, and the text will expand to show you the first section of the Wikipedia article.&nbsp;
+<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/common/commonPrint.css?283s" type="text/css" media="" />
+<link rel="stylesheet" href="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/css/combined.min.css?117" type="text/css" media="all" />
+<link rel="stylesheet" href="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/css/vector/jquery-ui-1.7.2.css?1.7.2y" type="text/css" media="all" />
+<link rel="stylesheet" href="/w/index.php?title=MediaWiki:Common.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=2678400&amp;action=raw&amp;maxage=2678400" type="text/css" media="all" />
+<link rel="stylesheet" href="/w/index.php?title=MediaWiki:Print.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=2678400&amp;action=raw&amp;maxage=2678400" type="text/css" media="" />
+<link rel="stylesheet" href="/w/index.php?title=MediaWiki:Handheld.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=2678400&amp;action=raw&amp;maxage=2678400" type="text/css" media="handheld" />
+<link rel="stylesheet" href="/w/index.php?title=MediaWiki:Vector.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=2678400&amp;action=raw&amp;maxage=2678400" type="text/css" media="all" />
+<link rel="stylesheet" href="/w/index.php?title=-&amp;action=raw&amp;maxage=2678400&amp;gen=css" type="text/css" media="all" /></p>
+<p><style type="text/css">
+.hidden { display: none; }
+.unhidden { display: block; }
+</style> <script type="text/javascript">
+<!--
+
+function unescapeHTML(html) {
+   var htmlNode = document.createElement("DIV");
+   htmlNode.innerHTML = html;
+   if(htmlNode.innerText !== undefined)
+      return htmlNode.innerText; // IE
+   return htmlNode.textContent; // FF
+}
+
+
+function toggle(i,j) {
+   var first_paragraph = document.getElementById("first_paragraph_" + i + "_" + j);
+   var lead_section = document.getElementById("lead_section_" + i + "_" + j);
+   var toggle_switch = document.getElementById("toggle_switch_" + i + "_" + j);
+   if (first_paragraph) {
+	if (first_paragraph.className == 'hidden') {
+		first_paragraph.className = 'unhidden';
+		lead_section.className = 'hidden';
+		toggle_switch.innerHTML = 'MORE';
+	} else {
+		first_paragraph.className = 'hidden';
+		lead_section.className = 'unhidden';
+		toggle_switch.innerHTML = 'LESS';
+       }
+   }
+}
+
+var article_1_array = [ 
+	"${article_1_0}",
+	"${article_1_1}",
+	"${article_1_2}",
+	"${article_1_3}",
+	"${article_1_4}",
+	"${article_1_5}",
+	"${article_1_6}",
+	"${article_1_7}",
+	"${article_1_8}",
+	"${article_1_9}",
+	"${article_1_10}",
+	"${article_1_11}",
+	"${article_1_12}",
+	"${article_1_13}",
+	"${article_1_14}",
+	"${article_1_15}",
+	"${article_1_16}",
+	"${article_1_17}",
+	"${article_1_18}",
+	"${article_1_19}" 
+];
+
+var article_2_array = [ 
+	"${article_2_0}",
+	"${article_2_1}",
+	"${article_2_2}",
+	"${article_2_3}",
+	"${article_2_4}",
+	"${article_2_5}",
+	"${article_2_6}",
+	"${article_2_7}",
+	"${article_2_8}",
+	"${article_2_9}",
+	"${article_2_10}",
+	"${article_2_11}",
+	"${article_2_12}",
+	"${article_2_13}",
+	"${article_2_14}",
+	"${article_2_15}",
+	"${article_2_16}",
+	"${article_2_17}",
+	"${article_2_18}",
+	"${article_2_19}" 
+];
+
+var first_paragraph_1_array = [ 
+	"${first_paragraph_1_0}",
+	"${first_paragraph_1_1}",
+	"${first_paragraph_1_2}",
+	"${first_paragraph_1_3}",
+	"${first_paragraph_1_4}",
+	"${first_paragraph_1_5}",
+	"${first_paragraph_1_6}",
+	"${first_paragraph_1_7}",
+	"${first_paragraph_1_8}",
+	"${first_paragraph_1_9}",
+	"${first_paragraph_1_10}",
+	"${first_paragraph_1_11}",
+	"${first_paragraph_1_12}",
+	"${first_paragraph_1_13}",
+	"${first_paragraph_1_14}",
+	"${first_paragraph_1_15}",
+	"${first_paragraph_1_16}",
+	"${first_paragraph_1_17}",
+	"${first_paragraph_1_18}",
+	"${first_paragraph_1_19}" 
+];
+
+var first_paragraph_2_array = [ 
+	"${first_paragraph_2_0}",
+	"${first_paragraph_2_1}",
+	"${first_paragraph_2_2}",
+	"${first_paragraph_2_3}",
+	"${first_paragraph_2_4}",
+	"${first_paragraph_2_5}",
+	"${first_paragraph_2_6}",
+	"${first_paragraph_2_7}",
+	"${first_paragraph_2_8}",
+	"${first_paragraph_2_9}",
+	"${first_paragraph_2_10}",
+	"${first_paragraph_2_11}",
+	"${first_paragraph_2_12}",
+	"${first_paragraph_2_13}",
+	"${first_paragraph_2_14}",
+	"${first_paragraph_2_15}",
+	"${first_paragraph_2_16}",
+	"${first_paragraph_2_17}",
+	"${first_paragraph_2_18}",
+	"${first_paragraph_2_19}" 
+];
+
+
+var lead_section_1_array = [ 
+	"${lead_section_1_0}",
+	"${lead_section_1_1}",
+	"${lead_section_1_2}",
+	"${lead_section_1_3}",
+	"${lead_section_1_4}",
+	"${lead_section_1_5}",
+	"${lead_section_1_6}",
+	"${lead_section_1_7}",
+	"${lead_section_1_8}",
+	"${lead_section_1_9}",
+	"${lead_section_1_10}",
+	"${lead_section_1_11}",
+	"${lead_section_1_12}",
+	"${lead_section_1_13}",
+	"${lead_section_1_14}",
+	"${lead_section_1_15}",
+	"${lead_section_1_16}",
+	"${lead_section_1_17}",
+	"${lead_section_1_18}",
+	"${lead_section_1_19}" 
+];
+
+var lead_section_2_array = [ 
+	"${lead_section_2_0}",
+	"${lead_section_2_1}",
+	"${lead_section_2_2}",
+	"${lead_section_2_3}",
+	"${lead_section_2_4}",
+	"${lead_section_2_5}",
+	"${lead_section_2_6}",
+	"${lead_section_2_7}",
+	"${lead_section_2_8}",
+	"${lead_section_2_9}",
+	"${lead_section_2_10}",
+	"${lead_section_2_11}",
+	"${lead_section_2_12}",
+	"${lead_section_2_13}",
+	"${lead_section_2_14}",
+	"${lead_section_2_15}",
+	"${lead_section_2_16}",
+	"${lead_section_2_17}",
+	"${lead_section_2_18}",
+	"${lead_section_2_19}" 
+];
+
+
+
+var num_pairs = 20;
+
+document.write('<table>');
+for(i = 0; i < num_pairs; i++) {
+	article_1= article_1_array[i];
+	article_1= article_1.replace(/_/g, ' ');
+	article_2= article_2_array[i];
+	article_2= article_2.replace(/_/g, ' ');
+	first_paragraph_1 = first_paragraph_1_array[i];
+	first_paragraph_2 = first_paragraph_2_array[i];
+	lead_section_1 = lead_section_1_array[i];
+	lead_section_2 = lead_section_2_array[i];
+
+
+	document.write('<tr valign="top">');
+	document.write('<td width="33%">');
+	document.write('<span id="first_paragraph_1_' + i + '" class="unhidden">');
+	document.write(unescapeHTML(first_paragraph_1));
+	document.write('</span>');
+	document.write('<span id="lead_section_1_' + i + '" class="hidden">');
+	document.write(unescapeHTML(lead_section_1));
+	document.write('</span>');
+	document.write('<a href="javascript:toggle(1, ' + i + ');" id="toggle_switch_1_' + i + '">MORE</a>');
+	document.write('</td><td width="33%">');
+	document.write('<span id="first_paragraph_2_' + i + '" class="unhidden">');
+	document.write(unescapeHTML(first_paragraph_2));
+	document.write('</span>');
+	document.write('<span id="lead_section_2_' + i + '" class="hidden">');
+	document.write(unescapeHTML(lead_section_2));
+	document.write('</span>');
+	document.write('<a href="javascript:toggle(2, ' + i + ');" id="toggle_switch_2_' + i + '">MORE</a>');
+	document.write('</td><td width="33%">');
+	document.write('<span class="answertext">');
+	document.write('<p>Were <b>' +  article_1 + ' </b> and <b>' + article_2 + '</b> popular for similar reasons in ${month} ${year}?</p>');
+	document.write('<input type="radio" value="yes" name="related_' + i + '"/><span class="answertext"><b>yes</b></span>');
+	document.write('<input type="radio" value="no" name="related_' + i + '"/><span class="answertext"><b>no</b></span>');
+	document.write('</span>');
+	document.write('</td>');
+	document.write('</tr>');	
+}
+document.write('</table>');
+//-->
+</script></p>
+<p>Please provide any comments that you have about this HIT. We appreciate your input!</p>
+<p><textarea rows="4" cols="80" name="comment"> </textarea>&nbsp;</p>
+<p><input type="hidden" name="userDisplayLanguage" /> <input type="hidden" name="browserInfo" /> <input type="hidden" name="ipAddress" /> <input type="hidden" name="country" /> <input type="hidden" name="city" /> <input type="hidden" name="region" /></p>
+<script language="Javascript" src="http://gd.geobytes.com/gd?after=-1&variables=GeobytesCountry,GeobytesCity,GeobytesRegion,GeobytesIpAddress">
+</script> <script language="Javascript">
+<!--
+function getUserInfo() {
+	var userDisplayLanguage = navigator.language ? navigator.language : navigator.userDisplayLanguage;
+	var browserInfo = navigator.userAgent;
+	var ipAddress = sGeobytesIpAddress;
+	var country = sGeobytesCountry;
+	var city = sGeobytesCity;
+	var region = sGeobytesRegion;
+
+	document.mturk_form.userDisplayLanguage.value = userDisplayLanguage;
+	document.mturk_form.browserInfo.value = browserInfo;
+	document.mturk_form.ipAddress.value = ipAddress;
+	document.mturk_form.country.value = country;
+	document.mturk_form.city.value = city;
+	document.mturk_form.region.value = region;
+}
+
+getUserInfo();
+
+// -->
+</script>
