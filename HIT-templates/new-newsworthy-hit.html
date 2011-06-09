@@ -233,8 +233,23 @@
 	"${lead_section11}",
    ];
 
+   var recent_sentences = [ 
+	"${recent_sentences0}",
+	"${recent_sentences1}",
+	"${recent_sentences2}",
+	"${recent_sentences3}",
+	"${recent_sentences4}",
+	"${recent_sentences5}",
+	"${recent_sentences6}",
+	"${recent_sentences7}",
+	"${recent_sentences8}",
+	"${recent_sentences9}",
+	"${recent_sentences10}",
+	"${recent_sentences11}",
+   ];
+
    <!-- wrapper table for formatting purposes -->
-   document.write('<table>');
+   document.write('<table');
    document.write('<tbody>');
    document.write('<tr valign="top">');
    document.write('<td>');
@@ -246,6 +261,7 @@
    document.write('<th>Wikipedia Article</th>');
    document.write('<th>Google News Link</th>');
    document.write('<th>First sentence</th>');
+   document.write('<th>Recent sentences</th>');
    document.write('</tr>');
    <!-- begin task generation -->
    for (var i = 0; i < 12; i++) {
@@ -260,7 +276,7 @@
      document.write('</td>');
      <!-- second option -->
      document.write('<td>');
-     document.write('<select name="when newsworthy' + i + '">');
+     document.write('<select style="width: 10em;" name="when newsworthy' + i + '">');
      document.write('<option value=""></option>');
      document.write('<option value="That Day">On ${date}</option>');
      document.write('<option value="Within 2 weeks">Within a few weeks of ${date}</option>');
@@ -275,7 +291,7 @@
      document.write('</td>');
      document.write('<td>');
      document.write('<a href="http://news.google.com/news/search?aq=f&pz=1&cf=all&ned=us&hl=en&q=' + temp + '&btnmeta_news_search=Search+News">Google News</a>');
-     document.write('<td>');
+     document.write('<td style="overflow:hidden; width:150px; word-wrap:break-word;">');
      document.write('<a id="more' + i + '" style="display:block;">');
      document.write(unescapeHTML(lead_sentences[i]));
      document.write('</a>');
@@ -289,6 +305,9 @@
      document.write('less ...');
      document.write('</a>');
      document.write('</a>');
+     document.write('</td>');
+     document.write('<td style="overflow:hidden; width:150px; word-wrap:break-word;">');
+     document.write(unescapeHTML(recent_sentences[i]));
      document.write('</td>');
      document.write('</tr>');
    }
